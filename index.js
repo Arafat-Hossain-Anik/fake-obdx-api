@@ -18,7 +18,7 @@ app.post("/obdx/api", (req, res) => {
         "status": {
             "result": "success",
         },
-        "receivedResponseData": "0"
+        "receivedResponseResult": "0"
     };
     res.send(response);
 });
