@@ -10,7 +10,11 @@ app.get("/", (req, res) => {
     const data = req.body;
     const headers = req.headers;
     console.log(data, headers);
-    res.send("Got your data", data);
+    const response = {
+        "status": "success",
+        "message": data
+    }
+    res.send(response);
 });
 
 app.post("/obdx/api", (req, res) => {
