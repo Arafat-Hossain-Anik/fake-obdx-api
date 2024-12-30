@@ -14,13 +14,32 @@ app.post("/obdx/api", (req, res) => {
     console.log("Request received");
     const data = req.body;
     console.log(data);
-    const response = {
-        "status": {
-            "result": "success",
-        },
-        "receivedResponseResult": "0"
-    };
-    res.send(response);
+    if (data?.responseValue == "Reversed") {
+        const response = {
+            "status": {
+                "result": "SUCCESSFUL",
+                "contextID": "1234567899ygffghiojhgvh",
+                "message": {
+                    "type": "INFO",
+                }
+            },
+            "receivedResponseResult": "0"
+        };
+        res.send(response);
+    }
+    else {
+        const response = {
+            "status": {
+                "result": "SUCCESSFUL",
+                "contextID": "1234567899ygffghiojhgvh",
+                "message": {
+                    "type": "INFO",
+                }
+            },
+            "receivedResponseResult": "1"
+        };
+        res.send(response);
+    }
 });
 
 app.listen(port, () => {
