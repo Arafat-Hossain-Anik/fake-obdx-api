@@ -7,7 +7,10 @@ app.use(express.json());
 app.use(cors());
 
 app.get("/", (req, res) => {
-    res.send("Hello World!");
+    const data = req.body;
+    const headers = req.headers;
+    console.log(data, headers);
+    res.send("Got your data", data);
 });
 
 app.post("/obdx/api", (req, res) => {
